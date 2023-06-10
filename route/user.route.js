@@ -50,7 +50,7 @@ userRouter.post('/login', async (req, res) => {
                 if (result) {
                     jwt.sign({ userId: findEmail._id, userName: findEmail.name }, "bharat", function (err, token) {
                         if (token) {
-                            res.send({ "msg": "user login successfull", token })
+                            res.send({ "msg": "user login successfull", token, userName:findEmail.name })
                         } else {
                             err.message
                         }
